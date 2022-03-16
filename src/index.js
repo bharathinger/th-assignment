@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-
 import {
 	ApolloClient,
 	InMemoryCache,
@@ -10,6 +9,7 @@ import {
 	useLazyQuery,
 	gql
 } from "@apollo/client";
+import { ChakraProvider } from '@chakra-ui/react'
 
 const client = new ApolloClient({
 	uri: 'https://api.staging.tigerhall.io/graphql',
@@ -82,8 +82,9 @@ function Podcasts() {
 ReactDOM.render(
 	<React.StrictMode>
 		<ApolloProvider client={client}>
-			<App />
-			{/* <SearchPodcasts /> */}
+			<ChakraProvider>
+				<App />
+			</ChakraProvider>
 			<Podcasts />
 		</ApolloProvider>
 	</React.StrictMode>,
