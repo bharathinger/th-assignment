@@ -51,7 +51,7 @@ const Podcasts = () => {
         />
       </Box>
       {loading ? <><Loader /><Loader /><Loader /></> : error ? <p>Error :(</p> :
-        <Box height={'calc(100% - 124px)'} top={'5rem'} overflow='auto' position={'fixed'} p={5}>
+        <Box height={'calc(100% - 124px)'} top={'6rem'} overflow='auto' position={'fixed'} p={5}>
           {content?.length > 0 ? content.map(({ id, name, image, categories, experts }) => (
             <ContentCard key={id} name={name} image={image} categories={categories} experts={experts} />
           )) : <Text color='th.orange' fontSize={'md'} align={'center'}>No records found :(</Text>}
