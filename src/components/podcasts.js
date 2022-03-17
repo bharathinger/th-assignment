@@ -7,14 +7,13 @@ import { PODCASTS } from '../graphql/queries';
 import { Text, Input, Box } from '@chakra-ui/react';
 import Loader from './loader';
 import ContentCard from './contentCard';
-
-const LIMIT = 20;
+import { LIMIT, DELAY_IN_MILLISECONDS } from '../constants';
 
 
 const Podcasts = () => {
 
   const [query, setQuery] = useState('');
-  const debouncedSearchTerm = useDebounce(query, 300);
+  const debouncedSearchTerm = useDebounce(query, DELAY_IN_MILLISECONDS);
   const [searchPodcasts, { loading, error, data }] = useLazyQuery(PODCASTS);
 
   useEffect(() => {

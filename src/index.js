@@ -9,9 +9,10 @@ import {
 } from "@apollo/client";
 import { ChakraProvider } from '@chakra-ui/react'
 import { theme } from './theme';
+import { TH_GRAPHQL_ENDPOINT } from './constants'
 
 const client = new ApolloClient({
-	uri: 'https://api.staging.tigerhall.io/graphql',
+	uri: TH_GRAPHQL_ENDPOINT,
 	cache: new InMemoryCache()
 });
 
